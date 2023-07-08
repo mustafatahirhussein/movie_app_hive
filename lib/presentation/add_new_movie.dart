@@ -31,7 +31,7 @@ class _AddNewMovieState extends State<AddNewMovie> {
   }
 
   dynamic addMoviePicture() async {
-    PickedFile? pf = await ImagePicker().getImage(source: ImageSource.gallery);
+    PickedFile? pf = await ImagePicker().getImage(source: ImageSource.camera);
 
     if (pf!.path.isNotEmpty) {
       setState(() {
@@ -71,15 +71,15 @@ class _AddNewMovieState extends State<AddNewMovie> {
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Align(
+                    child: const Align(
                       alignment: Alignment.center,
-                      child: Icon(Icons.camera, size: 70),
+                      child: Icon(Icons.camera, size: 70, color: Colors.white),
                     ),
                   ),
           ),
           buildField(titleC!, 'Movie Title'),
-          buildField(genreC!, 'Movie Genre'),
           buildField(directorC!, 'Movie Director'),
+          buildField(genreC!, 'Movie Genre'),
           Container(
             height: 50,
             margin: const EdgeInsets.only(top: 45),
